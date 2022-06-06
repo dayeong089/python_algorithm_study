@@ -5,7 +5,6 @@
 >> 가지고 있는 동전 중에서 큰 단위가 항상 작은 단위의 배수이므로 그리디 알고리즘 사용 가능
 '''
 
-from re import X
 import sys
 r = sys.stdin.readline
 
