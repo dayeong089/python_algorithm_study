@@ -48,3 +48,25 @@ for x in lst:
 print(x1, y1)
 
 # 구현 2
+import sys
+r = sys.stdin.readline
+
+n = int(r())
+lst = list(r().rstrip().split(" "))
+x, y = 1, 1
+
+move = ["L", "R", "U", "D"]
+mx = [0, 0, -1, 1]
+my = [-1, 1, 0, 0]
+
+for now in lst:
+    for i in range(len(move)):
+        if now == move[i]:
+            tmpx = x + mx[i]
+            tmpy = y + my[i]
+
+    if tmpx > 0 and tmpx <=n and tmpy > 0 and tmpy <= n:
+        x = tmpx
+        y = tmpy
+
+print(x, y)
