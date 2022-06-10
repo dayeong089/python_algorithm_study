@@ -100,3 +100,48 @@ while True:
 print(cnt)
 
 # 구현 2
+import sys
+r = sys.stdin.readline
+
+n, m = map(int, r().split(" "))
+a, b, d = map(int, r().split(" "))
+lst = [list(map(int, r().split(" "))) for _ in range(n)]
+
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+
+def turnleft():
+    global d
+    d -= 1
+    if d == -1:
+        d = 3
+
+cnt = 1
+while True:
+    lst[a][b] = 1
+
+    check = 0
+    for _ in range(4):
+        turnleft()
+        na = a + dx[d]
+        nb = b + dy[d]
+
+        if lst[na][nb] == 0:
+            a = na
+            b = nb
+            cnt += 1
+            check = 1
+            continue
+
+    if check == 0:
+        na = a - dx[d]
+        nb = b - dy[d]
+
+        if lst[na][nb] == 0:
+            a = na
+            b = nb
+            cnt += 1
+        else:
+            break
+
+print(cnt)
