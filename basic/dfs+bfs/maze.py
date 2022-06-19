@@ -20,8 +20,6 @@ r = sys.stdin.readline
 n, m = map(int, r().split(" "))
 lst = [list(map(int, r().rstrip())) for _ in range(n)]
 
-print(lst)
-
 dx = [1, -1, 0, 0]
 dy = [0, 0 , 1, -1]
 queue = deque()
