@@ -40,3 +40,31 @@ for i in range(N):
             dfs(i, j)
 
 print(cnt)
+''''
+
+import sys
+r = sys.stdin.readline
+
+N, M = map(int, r().split(" "))
+lst = [list(map(int, r().rstrip())) for _ in range(N)]
+
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
+cnt = 0
+
+def dfs(x, y):
+    lst[x][y] = 1
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if nx >= 0 and nx < N and ny >= 0 and ny < M:
+            if lst[nx][ny] == 0:
+                dfs(nx, ny)
+
+for i in range(N):
+    for j in range(M):
+        if lst[i][j] == 0:
+            dfs(i, j)
+            cnt += 1
+
+print(cnt)
