@@ -41,3 +41,40 @@ def bfs(x, y):
 
 bfs(0, 0)
 print(lst[n-1][m-1])
+
+''''
+lst[nx][ny]가 1이 아닌 경우(이미 한번 다녀간 경우), 그 보다 작은 값으로 바뀔 가능성은 없나?
+이미 다녀갔지만 두번째 방문했을 때의 수가 더 작을 가능성은 없는지?
+를 고려하여 다시 작성한 코드
+''''
+
+import sys
+from collections import deque
+r = sys.stdin.readline
+
+N, M = map(int, r().split(" "))
+lst = [list(map(int, r().rstrip())) for _ in range(N)]
+dx = [0, 0, 1, -1]
+dy = [1, -1, 0, 0]
+
+def bfs():
+    queue = deque()
+    queue.append((0,0))
+
+    while queue:
+        now = queue.popleft()
+        x = now[0]
+        y = now[1]
+
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx>=0 and nx<N and ny>=0 and ny<M and lst[nx][ny]!=0:
+                if lst[nx][ny] == 1: #처음 방문하는 경우
+                    lst[nx][ny] = lst[x][y] + 1
+                    queue.append((nx, ny))
+                else: #첫 방문이 아닌 경우 > 현재 값과 새로운 값 중 작은 값을 넣는다
+                    lst[nx][ny] = min(lst[nx][ny], lst[x][y]+1)
+        
+bfs()
+print(lst[N-1][M-1])
