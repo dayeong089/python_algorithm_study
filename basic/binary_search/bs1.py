@@ -1,11 +1,12 @@
 ''''
 재귀 함수를 이용한 이진 탐색 코드
 ''''
+
 import sys
 r = sys.stdin.readline
 
 def binary_search(lst, start, end, target):
-    if start>end:
+    if start > end:
         return None
 
     mid = (start+end)//2
@@ -15,7 +16,6 @@ def binary_search(lst, start, end, target):
         return binary_search(lst, start, mid-1, target)
     else:
         return binary_search(lst, mid+1, end, target)
-
 
 n, target = map(int, r().split(" "))
 lst = list(map(int, r().split(" ")))
