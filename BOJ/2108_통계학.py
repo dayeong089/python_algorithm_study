@@ -1,4 +1,4 @@
-#정렬, list count, index, sum, round 함수 활용
+# 정렬, list count, index, sum, round 함수 활용
 
 import sys
 r = sys.stdin.readline
