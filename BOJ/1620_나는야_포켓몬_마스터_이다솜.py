@@ -1,4 +1,4 @@
-# dict
+# dict & isdigit
 # code1
 import sys
 r = sys.stdin.readline
