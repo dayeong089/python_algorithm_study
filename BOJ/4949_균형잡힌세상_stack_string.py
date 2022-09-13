@@ -1,3 +1,5 @@
+# stack 문제인데 string 다루는 아이디어 생각하는 것이 더 복잡했음
+
 import sys
 r = sys.stdin.readline
 
@@ -39,6 +41,8 @@ for j in sent_lst:
             else:
                 print("no")
                 now = 1
+        if now == 1:
+            break
     if now == 0:
         if stack: print("no")
         else: print("yes")
