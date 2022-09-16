@@ -34,7 +34,6 @@ for _ in range(t):
             if graph[i][j] == 1:
                 dfs(i, j, n, m)
                 cnt += 1
-
     result.append(cnt)
 
 for i in result:
