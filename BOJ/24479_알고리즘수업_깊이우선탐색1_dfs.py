@@ -13,7 +13,8 @@ for _ in range(M):
     graph[v].append(u)
 
 for i in graph:
-    i.sort()
+    i.sort() # 오름차순 방문
+    # 내림차순 방문 원하면 i.sort(reverse=True)
 
 def dfs(start):
     global cnt
