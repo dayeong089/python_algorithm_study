@@ -12,7 +12,6 @@ for i in range(len(lst)):
     for j in range(i+1):
         now += lst[j]
     x += now
-
 print(x)
 
 # code2 - 시간 단축
