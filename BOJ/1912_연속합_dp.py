@@ -14,7 +14,6 @@ for i in range(N):
             answer = now
         if now < 0:
             break
-
 print(answer)
 
 #code2
