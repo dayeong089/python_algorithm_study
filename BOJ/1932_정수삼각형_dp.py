@@ -18,7 +18,6 @@ for i in range(1, n):
             lst[i][j] = arr[i][j] + lst[i-1][j-1]
         else:
             lst[i][j] = arr[i][j] + max(lst[i-1][j], lst[i-1][j-1])
-
 print(max(lst[n-1]))
 
 #수정된 코드 - 삼각형 정보 리스트, 합 리스트 굳이 분리하지 않아도 되므로 하나로 구현
