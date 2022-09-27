@@ -55,5 +55,18 @@ print(lst[100])
 # 	y-=1
 # 	for line in graph:
 # 		for i in range(len(line)):
-# 			if line[i] == x:
+# 			if line[i] == x: #도착 위치에 뱀/사다리가 있으면 뱀/사다리끝으로 도착지점을 변경
 # 				line[i] = y
+
+# check = [-1]*100
+# q = deque()
+# q.append(0)
+# check[0] = 0
+
+# while(q):
+# 	x = q.popleft()
+# 	for y in graph[x]:
+# 		if check[y] == -1:
+# 			q.append(y)
+# 			check[y] = check[x]+1
+# print(check[99])
