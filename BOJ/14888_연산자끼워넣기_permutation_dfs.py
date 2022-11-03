@@ -42,3 +42,36 @@ for i in olst:
 
 print(max(result))
 print(min(result))
+
+# 두번째 - 재귀함수 이용, 실행시간이 훨씬 줄어듦
+import sys
+r = sys.stdin.readline
+
+n = int(r())
+num_lst = list(map(int, r().split(" ")))
+add, sub, mul, div = map(int, r().split(" "))
+max_value = -1e9
+min_value = 1e9
+
+def cal(num, i, add, sub, mul, div):
+    global max_value, min_value, n
+    if i==n:
+        max_value = max(num, max_value)
+        min_value = min(num, min_value)
+        return
+
+    if add>0:
+        cal(num+num_lst[i], i+1, add-1, sub, mul, div)
+    if sub>0:
+        cal(num-num_lst[i], i+1, add, sub-1, mul, div)
+    if mul>0:
+        cal(num*num_lst[i], i+1, add, sub, mul-1, div)
+    if div>0:
+        if num<0 and num_lst[i]>0:
+            cal(-(-num//num_lst[i]), i+1, add, sub, mul, div-1)
+        else:
+            cal(num//num_lst[i], i+1, add, sub, mul, div-1)
+
+cal(num_lst[0], 1, add, sub, mul, div)
+print(max_value)
+print(min_value)
