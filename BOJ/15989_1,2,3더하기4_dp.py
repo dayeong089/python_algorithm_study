@@ -26,10 +26,10 @@ t = int(r())
 lst = [1]*10001 #1로만 이루어진 경우
 
 for i in range(2, 10001):
-    lst[i] += lst[i-2] #1,2로 이루어진 경우
+    lst[i] += lst[i-2] #1,2로 이루어진 경우 더해줌
 
 for i in range(3, 10001):
-    lst[i] += lst[i-3] #1,2,3
+    lst[i] += lst[i-3] #1,2,3으로 이루어진 경우 더해줌
 
 for _ in range(t):
     x = int(r())
