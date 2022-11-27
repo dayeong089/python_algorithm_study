@@ -47,3 +47,35 @@ def bfs(n, k):
                 q.append((loc3, now))
         
 bfs(n, k)
+
+
+# 다른 풀이
+import sys
+from collections import deque
+r = sys.stdin.readline
+
+n, k = map(int, r().split(" "))
+if n==k:
+    print(0)
+    sys.exit()
+if n>k:
+    print(n-k)
+    sys.exit()
+
+visited = [False]*200001
+
+q = deque()
+q.append((n, 0))
+visited[n] = True
+
+while q:
+    loc, time = q.popleft()
+    lst = [loc-1, loc+1, loc*2]
+    for i in lst:
+        if i == k:
+            print(time+1)
+            sys.exit()
+        if 0<=i<=200000:
+            if visited[i]==False:
+                q.append((i, time+1))
+                visited[i] = True
