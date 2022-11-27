@@ -1,3 +1,4 @@
+# set을 사용하여 방문 
 import sys
 from collections import deque
 r = sys.stdin.readline
@@ -49,7 +50,7 @@ def bfs(n, k):
 bfs(n, k)
 
 
-# 다른 풀이
+# 다른 풀이 - visited list 사용해서 방문 체크
 import sys
 from collections import deque
 r = sys.stdin.readline
