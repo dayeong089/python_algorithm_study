@@ -1,4 +1,4 @@
-# set을 사용하여 방문 
+# set을 사용하여 방문 체크
 import sys
 from collections import deque
 r = sys.stdin.readline
