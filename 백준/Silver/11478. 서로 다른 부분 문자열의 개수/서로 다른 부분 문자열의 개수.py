@@ -1,7 +1,7 @@
 import sys
-r = sys.stdin.readline
+r = lambda: sys.stdin.readline().rstrip()
 
-s = r().rstrip()
+s = r()
 lst = []
 for i in range(len(s)+1):
     for j in range(i+1, len(s)+1):
