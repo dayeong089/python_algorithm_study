@@ -9,8 +9,6 @@ def solution(cards1, cards2, goal):
         elif idx2 < len(cards2) and word == cards2[idx2]:
             idx2 += 1
         else:
-            answer = 'No'
-            break
-            
-    if answer == '': answer = 'Yes'
-    return answer
+            return 'No'
+        
+    return 'Yes'
